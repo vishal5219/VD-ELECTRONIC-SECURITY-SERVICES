@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "VD Security",
+  "name": "VD Electronic Security Services",
+  "description": "Professional CCTV installation, biometric attendance systems, and door access solutions",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +21,11 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#0e2e71",
+  "background_color": "#ffffff",
+  "orientation": "portrait-primary",
+  "categories": ["business", "security", "technology"],
+  "lang": "en",
+  "scope": "/",
+  "prefer_related_applications": false
 }
