@@ -1,5 +1,5 @@
 // components/Header.js
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import {
     AppBar,
     Toolbar,
@@ -16,9 +16,9 @@ import {
     Box,
     Divider,
 } from '@mui/material';
-import { 
-    Phone, 
-    Menu as MenuIcon, 
+import {
+    Phone,
+    Menu as MenuIcon,
     Close as CloseIcon,
     Home,
     Security,
@@ -33,12 +33,13 @@ const Header = () => {
     const [drawerOpen, setDrawerOpen] = useState(false);
     const [activeSection, setActiveSection] = useState('home');
 
-    const menuItems = [
+    // Use useMemo to prevent recreation on every render
+    const menuItems = useMemo(() => [
         { name: 'Home', target: 'home', icon: <Home /> },
         { name: 'Services', target: 'services', icon: <Security /> },
         { name: 'Why Choose Us', target: 'why-choose-us', icon: <Star /> },
         { name: 'Contact', target: 'contact', icon: <ContactMail /> },
-    ];
+    ], []); // Empty dependency array means this only gets created once
 
     // Track active section on scroll
     useEffect(() => {
@@ -57,7 +58,7 @@ const Header = () => {
 
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
-    }, [menuItems]);
+    }, [menuItems]); // Now menuItems is stable thanks to useMemo
 
     const toggleDrawer = (open) => (event) => {
         if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -81,8 +82,8 @@ const Header = () => {
             sx={{ width: 280 }}
         >
             {/* Header */}
-            <Box sx={{ 
-                p: 2, 
+            <Box sx={{
+                p: 2,
                 backgroundColor: 'primary.main',
                 color: 'white',
                 display: 'flex',
@@ -92,7 +93,7 @@ const Header = () => {
                 <Typography variant="h6" sx={{ fontWeight: 600 }}>
                     Menu
                 </Typography>
-                <IconButton 
+                <IconButton
                     onClick={toggleDrawer(false)}
                     sx={{ color: 'white' }}
                 >
@@ -119,21 +120,21 @@ const Header = () => {
                             borderLeft: activeSection === item.target ? '4px solid #ff9800' : '4px solid transparent',
                             backgroundColor: activeSection === item.target ? 'rgba(255, 152, 0, 0.1)' : 'transparent',
                             '&:hover': {
-                                backgroundColor: activeSection === item.target 
-                                    ? 'rgba(255, 152, 0, 0.15)' 
+                                backgroundColor: activeSection === item.target
+                                    ? 'rgba(255, 152, 0, 0.15)'
                                     : 'rgba(0, 0, 0, 0.04)',
                             },
                             transition: 'all 0.3s ease',
                             py: 2,
                         }}
                     >
-                        <ListItemIcon sx={{ 
+                        <ListItemIcon sx={{
                             color: activeSection === item.target ? '#ff9800' : 'inherit',
                             minWidth: 40
                         }}>
                             {item.icon}
                         </ListItemIcon>
-                        <ListItemText 
+                        <ListItemText
                             primary={item.name}
                             sx={{
                                 '& .MuiListItemText-primary': {
@@ -169,9 +170,9 @@ const Header = () => {
     return (
         <AppBar position="sticky" sx={{ backgroundColor: '#0e2e71', py: 1 }}>
             <Toolbar>
-                <Typography variant="h6" component="div" sx={{ 
-                    flexGrow: 1, 
-                    display: 'flex', 
+                <Typography variant="h6" component="div" sx={{
+                    flexGrow: 1,
+                    display: 'flex',
                     alignItems: 'center',
                     fontSize: { xs: '0.9rem', sm: '1rem', md: '1.25rem' }
                 }}>
@@ -230,10 +231,10 @@ const Header = () => {
                                 </Button>
                             ))}
                         </Box>
-                        <Button 
-                            color="inherit" 
-                            startIcon={<Phone />} 
-                            sx={{ 
+                        <Button
+                            color="inherit"
+                            startIcon={<Phone />}
+                            sx={{
                                 ml: 2,
                                 backgroundColor: 'rgba(255, 152, 0, 0.1)',
                                 '&:hover': {
@@ -247,8 +248,8 @@ const Header = () => {
                     </>
                 ) : (
                     <>
-                        <IconButton 
-                            color="inherit" 
+                        <IconButton
+                            color="inherit"
                             onClick={toggleDrawer(true)}
                             sx={{
                                 '&:hover': {
