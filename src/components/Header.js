@@ -177,7 +177,7 @@ const Header = () => {
                     fontSize: { xs: '0.9rem', sm: '1rem', md: '1.25rem' }
                 }}>
                     <img
-                        src={`${process.env.PUBLIC_URL}/security-icon.svg`}
+                        src={`${process.env.PUBLIC_URL}/security-icon.png`}
                         alt="Security"
                         style={{ marginRight: '10px', height: '30px', width: '30px' }}
                         loading="lazy"
