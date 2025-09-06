@@ -23,7 +23,8 @@ import {
     Home,
     Security,
     Star,
-    ContactMail
+    ContactMail,
+    WhatsApp
 } from '@mui/icons-material';
 import { Link as ScrollLink } from 'react-scroll';
 
@@ -155,15 +156,36 @@ const Header = () => {
                     Contact Us
                 </Typography>
                 <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
-                    <Phone sx={{ fontSize: 16, mr: 1, color: 'primary.main' }} />
-                    <Typography
-                        variant="body2"
-                        component="a"
-                        href="tel:9619243384"
-                        sx={{ color: 'inherit', textDecoration: 'none' }}
-                    >
-                        9619243384
-                    </Typography>
+                    <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
+                        <Phone sx={{ fontSize: 16, mr: 1, color: 'primary.main' }} />
+                        <Typography
+                            variant="body2"
+                            component="a"
+                            href="tel:9619243384"
+                            sx={{ color: 'inherit', textDecoration: 'none' }}
+                        >
+                            9619243384
+                        </Typography>
+                    </Box>
+                    <Box sx={{ display: 'flex', alignItems: 'center', mb: 1, ml: 1 }}>
+                        <IconButton
+                            component="a"
+                            href="https://wa.me/919619243384?text=Hello%20VD%20Security%20Team%2C%20I%20have%20a%20query%20regarding%20your%20services."
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            sx={{
+                                color: '#1a56db',
+                                backgroundColor: 'rgba(255,255,255,0.1)',
+                                '&:hover': {
+                                    backgroundColor: 'rgba(255,255,255,0.2)',
+                                    transform: 'translateY(-2px)'
+                                },
+                                transition: 'all 0.3s ease'
+                            }}
+                        >
+                            <WhatsApp />
+                        </IconButton>
+                    </Box>
                 </Box>
                 <Typography variant="caption" sx={{ color: 'text.secondary' }}>
                     24/7 Emergency Support
@@ -253,6 +275,24 @@ const Header = () => {
                         >
                             9619243384
                         </Button>
+                        <IconButton
+                            component="a"
+                            href="https://wa.me/919619243384?text=Hello%20VD%20Security%20Team%2C%20I%20have%20a%20query%20regarding%20your%20services."
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            sx={{
+                                color: 'white',
+                                backgroundColor: 'rgba(255,255,255,0.1)',
+                                '&:hover': {
+                                    backgroundColor: 'rgba(255,255,255,0.2)',
+                                    transform: 'translateY(-2px)'
+                                },
+                                transition: 'all 0.3s ease',
+                                ml: 1
+                            }}
+                        >
+                            <WhatsApp />
+                        </IconButton>
                     </>
                 ) : (
                     <>

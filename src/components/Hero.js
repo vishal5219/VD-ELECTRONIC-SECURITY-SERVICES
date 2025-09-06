@@ -7,6 +7,12 @@ import { Row, Col } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Hero = () => {
+    const handleClickServices = (target) => {
+        const element = document.querySelector(target);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
     return (
         <Box
             id="home"
@@ -150,11 +156,12 @@ const Hero = () => {
                             <Button
                                 variant="contained"
                                 size="large"
+                                href="https://wa.me/919619243384?text=Hello%20VD%20Security%20Team%2C%20I%20have%20a%20query%20regarding%20your%20services."
+                                target="_blank"
                                 endIcon={<ArrowForward />}
                                 sx={{
                                     px: 4,
                                     py: 1.5,
-                                    fontSize: '1.1rem',
                                     fontWeight: 600,
                                     backgroundColor: '#ff9800',
                                     borderRadius: '50px',
@@ -163,7 +170,8 @@ const Hero = () => {
                                         transform: 'translateY(-3px)',
                                         boxShadow: '0 10px 30px rgba(255, 152, 0, 0.4)',
                                     },
-                                    transition: 'all 0.3s ease'
+                                    transition: 'all 0.3s ease',
+                                    fontSize: { xs: '13px', md: '1.1rem' }
                                 }}
                             >
                                 Free Consultation
@@ -177,7 +185,6 @@ const Hero = () => {
                                     borderWidth: '2px',
                                     px: 4,
                                     py: 1.5,
-                                    fontSize: '1.1rem',
                                     fontWeight: 600,
                                     borderRadius: '50px',
                                     '&:hover': {
@@ -186,8 +193,10 @@ const Hero = () => {
                                         color: '#ff9800',
                                         transform: 'translateY(-3px)',
                                     },
-                                    transition: 'all 0.3s ease'
+                                    transition: 'all 0.3s ease',
+                                    fontSize: { xs: '13px', md: '1.1rem' }
                                 }}
+                                onClick={() => handleClickServices('#services')}
                             >
                                 View Services
                             </Button>
@@ -197,7 +206,8 @@ const Hero = () => {
                             display: 'flex',
                             alignItems: 'center',
                             gap: 3,
-                            flexWrap: 'wrap'
+                            flexWrap: 'wrap',
+                            justifyContent: { md: 'left', xs: 'center' }
                         }}>
                             <Box sx={{
                                 display: 'flex',
@@ -285,7 +295,7 @@ const Hero = () => {
                     </Col>
                 </Row>
             </Container>
-        </Box>
+        </Box >
     );
 };
 
