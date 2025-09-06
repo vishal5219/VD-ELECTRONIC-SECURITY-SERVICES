@@ -47,8 +47,8 @@ const Hero = () => {
                         left: 0,
                         right: 0,
                         bottom: 0,
-                        zIndex: -1,
-                        opacity: 0.2
+                        zIndex: { xs: 1, md: -1 },
+                        opacity: 0.1
                     }}
                 />
             </LazyLoadComponent>
@@ -90,7 +90,7 @@ const Hero = () => {
                         '0%, 100%': { transform: 'translateY(0px)' },
                         '50%': { transform: 'translateY(-15px)' },
                     },
-                    display: { xs: 'none', sm: 'block' }
+                    display: { xs: 'none', lg: 'block' }
                 }}
             />
 

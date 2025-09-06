@@ -156,7 +156,12 @@ const Header = () => {
                 </Typography>
                 <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
                     <Phone sx={{ fontSize: 16, mr: 1, color: 'primary.main' }} />
-                    <Typography variant="body2">
+                    <Typography
+                        variant="body2"
+                        component="a"
+                        href="tel:9619243384"
+                        sx={{ color: 'inherit', textDecoration: 'none' }}
+                    >
                         9619243384
                     </Typography>
                 </Box>
@@ -232,6 +237,8 @@ const Header = () => {
                             ))}
                         </Box>
                         <Button
+                            component="a"
+                            href="tel:9619243384"
                             color="inherit"
                             startIcon={<Phone />}
                             sx={{
@@ -241,6 +248,7 @@ const Header = () => {
                                     backgroundColor: 'rgba(255, 152, 0, 0.2)',
                                 },
                                 transition: 'all 0.3s ease',
+                                textDecoration: 'none'
                             }}
                         >
                             9619243384

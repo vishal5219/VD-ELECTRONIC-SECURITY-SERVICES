@@ -26,14 +26,20 @@ const Contact = () => {
         e.preventDefault();
         // Here you would typically send the form data to your backend
         console.log('Form submitted:', formData);
+        e.preventDefault();
+
+        const subject = `New Contact Form Submission - ${formData.service}`;
+        const body = `
+    Name: ${formData.name}
+    Email: ${formData.email}
+    Phone: ${formData.phone}
+    Service: ${formData.service}
+    Message: ${formData.message}
+    `;
+
+        window.location.href = `mailto:vrindadey2023@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        setFormData({ name: '', email: '', phone: '', service: '', message: '' });
         setOpenSnackbar(true);
-        setFormData({
-            name: '',
-            email: '',
-            phone: '',
-            service: '',
-            message: ''
-        });
     };
 
     const handleCloseSnackbar = () => {

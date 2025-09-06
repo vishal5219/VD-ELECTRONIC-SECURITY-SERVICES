@@ -77,9 +77,13 @@ const Footer = () => {
                                 Your trusted partner for all security solutions. Protecting what matters most to you with professional, reliable, and affordable security services.
                             </Typography>
                         </Box>
-
-                        <Box sx={{ display: 'flex', gap: 1 }}>
+                        <Box sx={{ display: 'flex', gap: 1, justifyContent: 'center' }}>
+                            {/* Facebook */}
                             <IconButton
+                                component="a"
+                                href="https://www.facebook.com/yourpage" // replace with your FB page
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 sx={{
                                     color: 'white',
                                     backgroundColor: 'rgba(255,255,255,0.1)',
@@ -92,7 +96,11 @@ const Footer = () => {
                             >
                                 <Facebook />
                             </IconButton>
+
+                            {/* Mail */}
                             <IconButton
+                                component="a"
+                                href="mailto:vrindadey2023@gmail.com@example.com"
                                 sx={{
                                     color: 'white',
                                     backgroundColor: 'rgba(255,255,255,0.1)',
@@ -105,7 +113,11 @@ const Footer = () => {
                             >
                                 <Mail />
                             </IconButton>
+
+                            {/* Call */}
                             <IconButton
+                                component="a"
+                                href="tel:9619243384"
                                 sx={{
                                     color: 'white',
                                     backgroundColor: 'rgba(255,255,255,0.1)',
@@ -118,7 +130,13 @@ const Footer = () => {
                             >
                                 <Call />
                             </IconButton>
+
+                            {/* WhatsApp */}
                             <IconButton
+                                component="a"
+                                href="https://wa.me/919619243384?text=Hello%20VD%20Security%20Team%2C%20I%20have%20a%20query%20regarding%20your%20services."
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 sx={{
                                     color: 'white',
                                     backgroundColor: 'rgba(255,255,255,0.1)',
