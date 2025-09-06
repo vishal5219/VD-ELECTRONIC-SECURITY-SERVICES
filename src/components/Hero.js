@@ -100,7 +100,7 @@ const Hero = () => {
                 }}
             />
 
-            <Container maxWidth="lg">
+            <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 2 }}>
                 <Row className="align-items-center">
                     <Col md={7}>
                         <Box sx={{ mb: 4, display: 'flex', alignItems: 'center', gap: 2 }}>
