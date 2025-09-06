@@ -1,8 +1,10 @@
 // components/Services.js
 import React from 'react';
-import { Container, Typography, Grid, Card, CardContent, Box, Chip } from '@mui/material';
+import { Container, Typography, Card, CardContent, Box, Chip } from '@mui/material';
 import { Videocam, Fingerprint, Lock, SupportAgent, Shield, Alarm } from '@mui/icons-material';
 import { LazyLoadComponent } from 'react-lazy-load-image-component';
+import { Row, Col } from 'reactstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Services = () => {
     const services = [
@@ -54,23 +56,23 @@ const Services = () => {
     return (
         <Container id="services" sx={{ py: { xs: 6, md: 8 } }}>
             <Box sx={{ textAlign: 'center', mb: { xs: 4, md: 6 } }}>
-                <Typography 
-                    variant="h3" 
-                    component="h2" 
-                    gutterBottom 
+                <Typography
+                    variant="h3"
+                    component="h2"
+                    gutterBottom
                     className="section-title"
-                    sx={{ 
+                    sx={{
                         fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem' },
                         mb: 2
                     }}
                 >
                     Our Specialized Services
                 </Typography>
-                <Typography 
-                    variant="h6" 
-                    component="p" 
-                    color="textSecondary" 
-                    sx={{ 
+                <Typography
+                    variant="h6"
+                    component="p"
+                    color="textSecondary"
+                    sx={{
                         fontSize: { xs: '1rem', md: '1.25rem' },
                         maxWidth: '600px',
                         mx: 'auto'
@@ -80,41 +82,41 @@ const Services = () => {
                 </Typography>
             </Box>
 
-            <Grid container spacing={3}>
+            <Row className="justify-content-center">
                 {services.map((service, index) => (
-                    <Grid item xs={12} sm={6} lg={4} key={index}>
+                    <Col xs={12} md={6} lg={4} className="mb-4" key={index}>
                         <LazyLoadComponent>
                             <Card sx={{
                                 height: '100%',
                                 transition: 'all 0.3s ease',
                                 border: '1px solid rgba(0,0,0,0.08)',
-                                '&:hover': { 
-                                    transform: 'translateY(-8px)', 
+                                '&:hover': {
+                                    transform: 'translateY(-8px)',
                                     boxShadow: '0 12px 40px rgba(0,0,0,0.15)',
                                     borderColor: service.color
                                 }
                             }}>
-                                <CardContent sx={{ 
-                                    textAlign: 'center', 
+                                <CardContent sx={{
+                                    textAlign: 'center',
                                     p: { xs: 3, md: 4 },
                                     height: '100%',
                                     display: 'flex',
                                     flexDirection: 'column'
                                 }}>
-                                    <Box sx={{ 
-                                        color: service.color, 
+                                    <Box sx={{
+                                        color: service.color,
                                         mb: 3,
                                         display: 'flex',
                                         justifyContent: 'center'
                                     }}>
                                         {service.icon}
                                     </Box>
-                                    
-                                    <Typography 
-                                        variant="h5" 
-                                        component="h3" 
+
+                                    <Typography
+                                        variant="h5"
+                                        component="h3"
                                         gutterBottom
-                                        sx={{ 
+                                        sx={{
                                             fontWeight: 600,
                                             fontSize: { xs: '1.1rem', md: '1.25rem' },
                                             mb: 2
@@ -122,12 +124,12 @@ const Services = () => {
                                     >
                                         {service.title}
                                     </Typography>
-                                    
-                                    <Typography 
-                                        variant="body1" 
-                                        color="textSecondary" 
+
+                                    <Typography
+                                        variant="body1"
+                                        color="textSecondary"
                                         gutterBottom
-                                        sx={{ 
+                                        sx={{
                                             mb: 3,
                                             flexGrow: 1,
                                             lineHeight: 1.6
@@ -135,13 +137,13 @@ const Services = () => {
                                     >
                                         {service.description}
                                     </Typography>
-                                    
+
                                     <Box sx={{ textAlign: 'left' }}>
                                         {service.features.map((feature, i) => (
-                                            <Box 
-                                                key={i} 
-                                                sx={{ 
-                                                    display: 'flex', 
+                                            <Box
+                                                key={i}
+                                                sx={{
+                                                    display: 'flex',
                                                     alignItems: 'center',
                                                     mb: 1.5,
                                                     fontSize: { xs: '0.9rem', md: '1rem' }
@@ -159,7 +161,7 @@ const Services = () => {
                                             </Box>
                                         ))}
                                     </Box>
-                                    
+
                                     {service.badge && (
                                         <Chip
                                             label={service.badge}
@@ -178,9 +180,9 @@ const Services = () => {
                                 </CardContent>
                             </Card>
                         </LazyLoadComponent>
-                    </Grid>
+                    </Col>
                 ))}
-            </Grid>
+            </Row>
         </Container>
     );
 };

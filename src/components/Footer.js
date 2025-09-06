@@ -1,7 +1,9 @@
 // components/Footer.js
 import React from 'react';
-import { Container, Typography, Grid, Box, IconButton } from '@mui/material';
+import { Container, Typography, Box, IconButton } from '@mui/material';
 import { Facebook, Mail, Call, WhatsApp } from '@mui/icons-material';
+import { Row, Col } from 'reactstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
@@ -28,9 +30,9 @@ const Footer = () => {
     };
 
     return (
-        <Box component="footer" sx={{ 
-            backgroundColor: '#1f2937', 
-            color: 'white', 
+        <Box component="footer" sx={{
+            backgroundColor: '#1f2937',
+            color: 'white',
             py: { xs: 4, md: 6 },
             position: 'relative',
             overflow: 'hidden'
@@ -47,15 +49,15 @@ const Footer = () => {
                 backgroundSize: '30px 30px',
                 zIndex: 0
             }} />
-            
+
             <Container sx={{ position: 'relative', zIndex: 1 }}>
-                <Grid container spacing={4}>
-                    <Grid item xs={12} md={4}>
+                <Row>
+                    <Col xs={12} md={4} className="mb-4">
                         <Box sx={{ mb: 3 }}>
-                            <Typography 
-                                variant="h6" 
+                            <Typography
+                                variant="h6"
                                 gutterBottom
-                                sx={{ 
+                                sx={{
                                     fontWeight: 700,
                                     fontSize: { xs: '1.1rem', md: '1.3rem' },
                                     mb: 2
@@ -63,9 +65,9 @@ const Footer = () => {
                             >
                                 VD ELECTRONIC SECURITY SERVICES
                             </Typography>
-                            <Typography 
-                                variant="body2" 
-                                sx={{ 
+                            <Typography
+                                variant="body2"
+                                sx={{
                                     mb: 3,
                                     lineHeight: 1.6,
                                     opacity: 0.9,
@@ -75,10 +77,10 @@ const Footer = () => {
                                 Your trusted partner for all security solutions. Protecting what matters most to you with professional, reliable, and affordable security services.
                             </Typography>
                         </Box>
-                        
+
                         <Box sx={{ display: 'flex', gap: 1 }}>
-                            <IconButton 
-                                sx={{ 
+                            <IconButton
+                                sx={{
                                     color: 'white',
                                     backgroundColor: 'rgba(255,255,255,0.1)',
                                     '&:hover': {
@@ -90,8 +92,8 @@ const Footer = () => {
                             >
                                 <Facebook />
                             </IconButton>
-                            <IconButton 
-                                sx={{ 
+                            <IconButton
+                                sx={{
                                     color: 'white',
                                     backgroundColor: 'rgba(255,255,255,0.1)',
                                     '&:hover': {
@@ -103,8 +105,8 @@ const Footer = () => {
                             >
                                 <Mail />
                             </IconButton>
-                            <IconButton 
-                                sx={{ 
+                            <IconButton
+                                sx={{
                                     color: 'white',
                                     backgroundColor: 'rgba(255,255,255,0.1)',
                                     '&:hover': {
@@ -116,8 +118,8 @@ const Footer = () => {
                             >
                                 <Call />
                             </IconButton>
-                            <IconButton 
-                                sx={{ 
+                            <IconButton
+                                sx={{
                                     color: 'white',
                                     backgroundColor: 'rgba(255,255,255,0.1)',
                                     '&:hover': {
@@ -130,13 +132,13 @@ const Footer = () => {
                                 <WhatsApp />
                             </IconButton>
                         </Box>
-                    </Grid>
+                    </Col>
 
-                    <Grid item xs={12} md={4}>
-                        <Typography 
-                            variant="h6" 
+                    <Col xs={12} md={4} className="mb-4">
+                        <Typography
+                            variant="h6"
                             gutterBottom
-                            sx={{ 
+                            sx={{
                                 fontWeight: 600,
                                 fontSize: { xs: '1.1rem', md: '1.2rem' },
                                 mb: 2
@@ -146,10 +148,10 @@ const Footer = () => {
                         </Typography>
                         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
                             {quickLinks.map((link, index) => (
-                                <Typography 
+                                <Typography
                                     key={index}
-                                    variant="body2" 
-                                    sx={{ 
+                                    variant="body2"
+                                    sx={{
                                         cursor: 'pointer',
                                         opacity: 0.8,
                                         transition: 'all 0.3s ease',
@@ -165,13 +167,13 @@ const Footer = () => {
                                 </Typography>
                             ))}
                         </Box>
-                    </Grid>
+                    </Col>
 
-                    <Grid item xs={12} md={4}>
-                        <Typography 
-                            variant="h6" 
+                    <Col xs={12} md={4} className="mb-4">
+                        <Typography
+                            variant="h6"
                             gutterBottom
-                            sx={{ 
+                            sx={{
                                 fontWeight: 600,
                                 fontSize: { xs: '1.1rem', md: '1.2rem' },
                                 mb: 2
@@ -181,10 +183,10 @@ const Footer = () => {
                         </Typography>
                         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
                             {services.map((service, index) => (
-                                <Typography 
+                                <Typography
                                     key={index}
-                                    variant="body2" 
-                                    sx={{ 
+                                    variant="body2"
+                                    sx={{
                                         cursor: 'pointer',
                                         opacity: 0.8,
                                         transition: 'all 0.3s ease',
@@ -200,7 +202,7 @@ const Footer = () => {
                                 </Typography>
                             ))}
                         </Box>
-                        
+
                         <Box sx={{ mt: 3, p: 2, backgroundColor: 'rgba(255,255,255,0.05)', borderRadius: 2 }}>
                             <Typography variant="body2" sx={{ fontWeight: 600, mb: 1 }}>
                                 Emergency Contact
@@ -212,14 +214,14 @@ const Footer = () => {
                                 9619243384
                             </Typography>
                         </Box>
-                    </Grid>
-                </Grid>
+                    </Col>
+                </Row>
 
-                <Box sx={{ 
-                    borderTop: '1px solid rgba(255, 255, 255, 0.12)', 
-                    mt: 4, 
-                    pt: 3, 
-                    textAlign: 'center' 
+                <Box sx={{
+                    borderTop: '1px solid rgba(255, 255, 255, 0.12)',
+                    mt: 4,
+                    pt: 3,
+                    textAlign: 'center'
                 }}>
                     <Typography variant="body2" sx={{ opacity: 0.8 }}>
                         &copy; {currentYear} VD Electronic Security Services. All Rights Reserved.

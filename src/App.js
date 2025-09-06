@@ -1,4 +1,4 @@
-// App.js - Updated for Vercel
+// App.js - Updated for Vercel with ImageGallery
 import React, { lazy, Suspense } from 'react';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { CssBaseline } from '@mui/material';
@@ -13,6 +13,7 @@ import './App.css';
 // Lazy load components for code splitting
 const Hero = lazy(() => import('./components/Hero'));
 const Services = lazy(() => import('./components/Services'));
+const ImageGallery = lazy(() => import('./components/ImageGallery'));
 const WhyChooseUs = lazy(() => import('./components/WhyChooseUs'));
 const Contact = lazy(() => import('./components/Contact'));
 const Footer = lazy(() => import('./components/Footer'));
@@ -65,6 +66,7 @@ function App() {
               <Route path="/" element={
                 <>
                   <Hero />
+                  <ImageGallery />
                   <Services />
                   <WhyChooseUs />
                   <Contact />

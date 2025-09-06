@@ -1,8 +1,10 @@
 // components/WhyChooseUs.js
 import React from 'react';
-import { Container, Typography, Grid, Box, Paper } from '@mui/material';
+import { Container, Typography, Box, Paper } from '@mui/material';
 import { VerifiedUser, Savings, Engineering, Star } from '@mui/icons-material';
 import { LazyLoadComponent } from 'react-lazy-load-image-component';
+import { Row, Col } from 'reactstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const WhyChooseUs = () => {
     const features = [
@@ -30,8 +32,8 @@ const WhyChooseUs = () => {
     ];
 
     return (
-        <Box id="why-choose-us" sx={{ 
-            backgroundColor: 'background.default', 
+        <Box id="why-choose-us" sx={{
+            backgroundColor: 'background.default',
             py: { xs: 6, md: 8 },
             position: 'relative',
             overflow: 'hidden'
@@ -48,26 +50,26 @@ const WhyChooseUs = () => {
                 backgroundSize: '50px 50px',
                 zIndex: 0
             }} />
-            
+
             <Container sx={{ position: 'relative', zIndex: 1 }}>
                 <Box sx={{ textAlign: 'center', mb: { xs: 4, md: 6 } }}>
-                    <Typography 
-                        variant="h3" 
-                        component="h2" 
-                        gutterBottom 
+                    <Typography
+                        variant="h3"
+                        component="h2"
+                        gutterBottom
                         className="section-title"
-                        sx={{ 
+                        sx={{
                             fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem' },
                             mb: 2
                         }}
                     >
                         Why Choose Us
                     </Typography>
-                    <Typography 
-                        variant="h6" 
-                        component="p" 
+                    <Typography
+                        variant="h6"
+                        component="p"
                         color="textSecondary"
-                        sx={{ 
+                        sx={{
                             fontSize: { xs: '1rem', md: '1.25rem' },
                             maxWidth: '600px',
                             mx: 'auto'
@@ -77,15 +79,15 @@ const WhyChooseUs = () => {
                     </Typography>
                 </Box>
 
-                <Grid container spacing={4} sx={{ mt: 2 }}>
+                <Row className="justify-content-center">
                     {features.map((feature, index) => (
-                        <Grid item xs={12} md={4} key={index}>
+                        <Col xs={12} md={6} lg={4} className="mb-4" key={index}>
                             <LazyLoadComponent>
-                                <Paper 
-                                    elevation={0} 
-                                    sx={{ 
-                                        p: { xs: 3, md: 4 }, 
-                                        textAlign: 'center', 
+                                <Paper
+                                    elevation={0}
+                                    sx={{
+                                        p: { xs: 3, md: 4 },
+                                        textAlign: 'center',
                                         height: '100%',
                                         border: '1px solid rgba(0,0,0,0.08)',
                                         borderRadius: 3,
@@ -97,20 +99,20 @@ const WhyChooseUs = () => {
                                         }
                                     }}
                                 >
-                                    <Box sx={{ 
-                                        color: feature.color, 
+                                    <Box sx={{
+                                        color: feature.color,
                                         mb: 3,
                                         display: 'flex',
                                         justifyContent: 'center'
                                     }}>
                                         {feature.icon}
                                     </Box>
-                                    
-                                    <Typography 
-                                        variant="h5" 
-                                        component="h3" 
+
+                                    <Typography
+                                        variant="h5"
+                                        component="h3"
                                         gutterBottom
-                                        sx={{ 
+                                        sx={{
                                             fontWeight: 600,
                                             fontSize: { xs: '1.2rem', md: '1.4rem' },
                                             mb: 2
@@ -118,11 +120,11 @@ const WhyChooseUs = () => {
                                     >
                                         {feature.title}
                                     </Typography>
-                                    
-                                    <Typography 
-                                        variant="body1" 
+
+                                    <Typography
+                                        variant="body1"
                                         color="textSecondary"
-                                        sx={{ 
+                                        sx={{
                                             mb: 3,
                                             lineHeight: 1.6,
                                             fontSize: { xs: '0.95rem', md: '1rem' }
@@ -130,7 +132,7 @@ const WhyChooseUs = () => {
                                     >
                                         {feature.description}
                                     </Typography>
-                                    
+
                                     <Box sx={{
                                         display: 'flex',
                                         alignItems: 'center',
@@ -143,9 +145,9 @@ const WhyChooseUs = () => {
                                         border: `1px solid ${feature.color}30`
                                     }}>
                                         <Star sx={{ fontSize: 16, color: feature.color }} />
-                                        <Typography 
-                                            variant="body2" 
-                                            sx={{ 
+                                        <Typography
+                                            variant="body2"
+                                            sx={{
                                                 fontWeight: 600,
                                                 color: feature.color,
                                                 fontSize: '0.85rem'
@@ -156,12 +158,12 @@ const WhyChooseUs = () => {
                                     </Box>
                                 </Paper>
                             </LazyLoadComponent>
-                        </Grid>
+                        </Col>
                     ))}
-                </Grid>
-                
+                </Row>
+
                 {/* Additional Stats */}
-                <Box sx={{ 
+                <Box sx={{
                     mt: { xs: 4, md: 6 },
                     textAlign: 'center',
                     p: { xs: 3, md: 4 },
@@ -172,32 +174,32 @@ const WhyChooseUs = () => {
                     <Typography variant="h4" component="h3" gutterBottom sx={{ fontWeight: 600 }}>
                         Our Success Numbers
                     </Typography>
-                    <Grid container spacing={3} sx={{ mt: 2 }}>
-                        <Grid item xs={6} md={3}>
+                    <Row className="justify-content-around mt-3">
+                        <Col xs={6} md={3} className="mb-3">
                             <Typography variant="h3" sx={{ fontWeight: 700, color: '#ff9800' }}>
                                 500+
                             </Typography>
                             <Typography variant="body1">Happy Clients</Typography>
-                        </Grid>
-                        <Grid item xs={6} md={3}>
+                        </Col>
+                        <Col xs={6} md={3} className="mb-3">
                             <Typography variant="h3" sx={{ fontWeight: 700, color: '#ff9800' }}>
                                 1000+
                             </Typography>
                             <Typography variant="body1">Installations</Typography>
-                        </Grid>
-                        <Grid item xs={6} md={3}>
+                        </Col>
+                        <Col xs={6} md={3} className="mb-3">
                             <Typography variant="h3" sx={{ fontWeight: 700, color: '#ff9800' }}>
                                 5+
                             </Typography>
                             <Typography variant="body1">Years Experience</Typography>
-                        </Grid>
-                        <Grid item xs={6} md={3}>
+                        </Col>
+                        <Col xs={6} md={3} className="mb-3">
                             <Typography variant="h3" sx={{ fontWeight: 700, color: '#ff9800' }}>
                                 24/7
                             </Typography>
                             <Typography variant="body1">Support</Typography>
-                        </Grid>
-                    </Grid>
+                        </Col>
+                    </Row>
                 </Box>
             </Container>
         </Box>
